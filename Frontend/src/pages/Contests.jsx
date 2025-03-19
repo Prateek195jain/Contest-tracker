@@ -16,8 +16,8 @@ function Contests() {
 
         const url =
           platform === "all"
-            ? "http://localhost:4000/contests" // Fetch all contests
-            : `http://localhost:4000/contests/${platform}`; // Fetch platform-specific contests
+            ? "https://contest-tracker-black.vercel.app/contests" // Fetch all contests
+            : `https://contest-tracker-black.vercel.app/contests/${platform}`; // Fetch platform-specific contests
 
         const response = await fetch(url);
         const result = await response.json();
@@ -40,7 +40,6 @@ function Contests() {
 
   return (
     <div className="p-6 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      {/* Title */}
       <motion.h2
         className="text-4xl font-extrabold text-center mb-6"
         initial={{ opacity: 0, y: -20 }}
@@ -52,7 +51,6 @@ function Contests() {
           : `${platform.toUpperCase()} Contests`}
       </motion.h2>
 
-      {/* Loading and Error Handling */}
       {loading ? (
         <motion.p
           className="text-center text-gray-300 mt-6 text-lg"
